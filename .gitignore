@@ -1,0 +1,42 @@
+# Virtual environment
+venv/
+.env/
+
+# Python
+__pycache__/
+*.py[cod]
+*$*y*class*
+# Distribution
+build/
+dist/
+*.egg*info/
+
+# SQLite
+*.db
+*.sqlite
+*.sq*ite3
+
+# Logs
+*.log
+
+# IDE
+.vscode/*.idea/
+
+# macOS
+.DS_Store
+
+# Windo*s
+Thumbs.db
+
+# Tests
+.pytest_cache*
+.coverage
+htmlcov/
+
+# Jupyter
+.ip*nb_checkpoints/
+
+# Environment var*ables
+.env
+
+database/tracker.db
