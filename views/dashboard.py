@@ -1,6 +1,7 @@
 import customtkinter as ctk
 
 from widgets.sidebar import Sidebar
+from widgets.cards import InfoCard
 
 
 class Dashboard(ctk.CTkFrame):
@@ -30,23 +31,27 @@ class Dashboard(ctk.CTkFrame):
             font=("Arial", 30, "bold")
         )
         title.pack(pady=20)
+        cards_frame = ctk.CTkFrame(self.main_frame,fg_color="transparent")
+        cards_frame.pack(fill="x", padx=20, pady=20)
+        cards_frame.grid_columnconfigure((0, 1, 2), weight=1)
 
-        cycle_label = ctk.CTkLabel(
-            self.main_frame,
-            text="Cycle actuel : inconnu",
-            font=("Arial", 16)
-        )
-        cycle_label.pack(pady=10)
+        cycle_card = InfoCard(cards_frame,"Cycle actuel","Jour 12")
 
-        next_period_label = ctk.CTkLabel(
-            self.main_frame,
-            text="Prochaines règles : inconnues",
-            font=("Arial", 16)
-        )
-        next_period_label.pack(pady=10)
+        cycle_card.grid(row=0,
+                        column=0,
+                        padx=10,
+                        sticky="ew")
+        next_period_card = InfoCard(cards_frame,
+                                    "Prochaines règles",
+                                    "11 Oct.")
 
-        add_button = ctk.CTkButton(
-            self.main_frame,
-            text="Ajouter une période"
-        )
-        add_button.pack(pady=20)
+        next_period_card.grid(row=0,column=1,padx=10,sticky="ew")
+
+        average_card = InfoCard(cards_frame,
+                                "Durée moyenne",
+                                "29 jours")
+
+        average_card.grid(row=0,
+                          column=2,
+                          padx=10,
+                          sticky="ew")
