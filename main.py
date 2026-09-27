@@ -1,6 +1,9 @@
 import customtkinter as ctk
 
 from views.dashboard import Dashboard
+from database.database import create_tables
+
+create_tables()
 
 class PeriodTrackerApp(ctk.CTk):
     def __init__(self):
